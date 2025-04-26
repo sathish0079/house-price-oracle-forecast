@@ -72,9 +72,11 @@ export const getPriceRange = (estimatedPrice: number): { min: number; max: numbe
 };
 
 export const formatCurrency = (value: number): string => {
-  return new Intl.NumberFormat('en-US', {
+  // Convert USD to INR (approximate conversion rate)
+  const inrValue = value * 83;
+  return new Intl.NumberFormat('en-IN', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'INR',
     maximumFractionDigits: 0
-  }).format(value);
+  }).format(inrValue);
 };

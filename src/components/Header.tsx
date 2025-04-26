@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Bot, IndianRupee } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
@@ -11,9 +13,20 @@ const Header = () => {
             <p className="text-sm md:text-base opacity-90">Advanced forecasting using data science</p>
           </div>
           <div className="flex items-center space-x-4">
-            <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-md">
-              <span className="text-xs font-medium block">POWERED BY</span>
-              <span className="font-semibold">Smart Regression AI</span>
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className="bg-white/10 hover:bg-white/20"
+              onClick={() => console.log('AI Assistant clicked')}
+            >
+              <Bot className="h-5 w-5" />
+            </Button>
+            <div className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-md flex items-center gap-2">
+              <IndianRupee className="h-4 w-4" />
+              <div>
+                <span className="text-xs font-medium block">POWERED BY</span>
+                <span className="font-semibold">Smart Regression AI</span>
+              </div>
             </div>
           </div>
         </div>
